@@ -132,7 +132,7 @@ const LecturePlatform = () => {
                   </div>
                   <div style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#f9fafb', borderRadius: '0.5rem', border: '1px solid #e5e7eb' }}>
                     <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#000' }}>평생</div>
-                    <div style={{ fontSize: '0.875rem', color: '#4b5563' }}>무제한 시청</div>
+                    <div style={{ fontSize: '0.875rem', color: '#4b5563' }}>무제한 시청 가능</div>
                   </div>
                   <div style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#f9fafb', borderRadius: '0.5rem', border: '1px solid #e5e7eb' }}>
                     <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#000' }}>HD</div>
