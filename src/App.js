@@ -116,8 +116,8 @@ const LecturePlatform = () => {
         {!user && (
           <div style={{ maxWidth: '42rem', margin: '0 auto' }}>
             <div style={{ backgroundColor: 'white', borderRadius: '0.5rem', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', overflow: 'hidden', marginBottom: '2rem', border: '1px solid #e5e7eb' }}>
-              <div style={{ aspectRatio: '16/9', background: 'linear-gradient(to bottom right, #1f2937, #000)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Play style={{ color: 'white', width: '5rem', height: '5rem', opacity: 0.6 }} />
+              <div style={{ aspectRatio: '16/9', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img src="/otm-logo.png" alt="OTM Logo" style={{ maxWidth: '70%', maxHeight: '70%', objectFit: 'contain' }} />
               </div>
               <div style={{ padding: '2rem' }}>
                 <h2 style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '1rem', color: '#111827' }}>시대인재 오택민 수능영어</h2>
@@ -143,7 +143,7 @@ const LecturePlatform = () => {
                 <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '1.5rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
                     <span style={{ color: '#9ca3af', textDecoration: 'line-through', fontSize: '1.125rem' }}>₩79,000</span>
-                    <span style={{ fontSize: '1.875rem', fontWeight: 'bold', color: '#000' }}>₩49,000</span>
+                    <span style={{ fontSize: '1.875rem', fontWeight: 'bold', color: '#000' }}>₩39,000</span>
                   </div>
                 </div>
               </div>
@@ -201,7 +201,7 @@ const LecturePlatform = () => {
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '1.5rem', fontWeight: 'bold' }}>
                   <span style={{ color: '#111827' }}>최종 결제 금액</span>
-                  <span style={{ color: '#000' }}>₩49,000</span>
+                  <span style={{ color: '#000' }}>₩39,000</span>
                 </div>
               </div>
 
