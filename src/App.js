@@ -274,7 +274,7 @@ const LecturePlatform = () => {
                   <div style={{ marginTop: '2rem', padding: '1.25rem', backgroundColor: '#f9f9f9' }}>
                     <p style={{ fontSize: '0.8125rem', color: '#666', lineHeight: '1.7' }}>
                       ※ 구매 후 즉시 시청 가능합니다<br />
-                      ※ PDF 파일과 영상이 모두 제공되므로 환불이 되지 않습니다
+                      ※ PDF 파일과 영상이 모두 제공되므로 환불이 되지 않습니다.
                     </p>
                   </div>
                 </div>
@@ -314,34 +314,30 @@ const LecturePlatform = () => {
                 </p>
 
                 <div style={{ borderTop: '1px solid #e5e5e5', paddingTop: '2rem' }}>
-                  <h2 style={{ fontSize: '1rem', fontWeight: '600', color: '#000', marginBottom: '1.5rem' }}>강의 커리큘럼</h2>
-                  <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    {[
-                      { title: '빈칸추론 완벽 공략법', duration: '18분' },
-                      { title: '순서배열 정확한 풀이 기준', duration: '18분' },
-                      { title: '문장삽입 핵심 전략', duration: '18분' },
-                      { title: '실전 문제풀이 연습', duration: '18분' },
-                      { title: '1등급 확정 마무리', duration: '18분' }
-                    ].map((chapter, idx) => (
-                      <div 
-                        key={idx}
-                        style={{ 
-                          display: 'flex', 
-                          alignItems: 'center', 
-                          justifyContent: 'space-between',
-                          padding: '1rem 0', 
-                          borderBottom: '1px solid #f0f0f0',
-                          cursor: 'pointer'
-                        }}
-                      >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                          <span style={{ fontSize: '0.875rem', color: '#999', width: '1.5rem' }}>0{idx + 1}</span>
-                          <span style={{ fontSize: '0.9375rem', color: '#000' }}>{chapter.title}</span>
-                        </div>
-                        <span style={{ fontSize: '0.8125rem', color: '#999' }}>{chapter.duration}</span>
-                      </div>
-                    ))}
-                  </div>
+                  <h2 style={{ fontSize: '1rem', fontWeight: '600', color: '#000', marginBottom: '1.5rem' }}>강의 자료</h2>
+                  <a 
+                    href="/lecture-material.pdf" 
+                    download
+                    style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'space-between',
+                      padding: '1.25rem 1.5rem', 
+                      backgroundColor: '#f9f9f9',
+                      border: '1px solid #e5e5e5',
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.2s'
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#f0f0f0'}
+                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#f9f9f9'}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                      <span style={{ fontSize: '1.25rem' }}>📄</span>
+                      <span style={{ fontSize: '0.9375rem', color: '#000', fontWeight: '500' }}>강의 자료 PDF 다운로드</span>
+                    </div>
+                    <span style={{ fontSize: '0.875rem', color: '#666' }}>↓</span>
+                  </a>
                 </div>
               </div>
             </div>
