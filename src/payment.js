@@ -9,7 +9,7 @@ export const requestPayment = (user, onSuccess, onFail) => {
     pay_method: 'card',
     merchant_uid: `order_${new Date().getTime()}_${user.uid}`,
     name: '시대인재 오택민 수능영어',
-    amount: 49000,
+    amount: 44900,
     buyer_email: user.email,
     buyer_name: user.displayName || '구매자',
     buyer_tel: '010-0000-0000',
