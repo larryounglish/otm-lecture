@@ -274,7 +274,7 @@ const LecturePlatform = () => {
                   <div style={{ marginTop: '2rem', padding: '1.25rem', backgroundColor: '#f9f9f9' }}>
                     <p style={{ fontSize: '0.8125rem', color: '#666', lineHeight: '1.7' }}>
                       ※ 구매 후 즉시 시청 가능합니다<br />
-                      ※ 7일 이내 환불 가능합니다
+                      ※ PDF 파일과 영상이 모두 제공되므로 환불이 되지 않습니다
                     </p>
                   </div>
                 </div>
