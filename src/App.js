@@ -12,6 +12,14 @@ const LecturePlatform = () => {
 
   const LECTURE_ID = 'otm-english-2025';
 
+  // 인앱 브라우저 감지
+  const isInAppBrowser = () => {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    return /KAKAOTALK|NAVER|Line|Instagram|FB_IAB|FBAN|FBAV|Twitter|WhatsApp|Snapchat/i.test(ua);
+  };
+
+  const showGoogleLogin = !isInAppBrowser();
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
@@ -152,9 +160,10 @@ const LecturePlatform = () => {
                 </div>
 
                 <div style={{ borderTop: '1px solid #e5e5e5', paddingTop: '2rem', marginBottom: '2.5rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
-                    <span style={{ fontSize: '1rem', color: '#999', textDecoration: 'line-through' }}>79,000원</span>
-                    <span style={{ fontSize: '1.75rem', fontWeight: '600', color: '#000' }}>39,000원</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <span style={{ fontSize: '1rem', color: '#999', textDecoration: 'line-through' }}>99,000원</span>
+                    <span style={{ fontSize: '1.75rem', fontWeight: '600', color: '#000' }}>44,900원</span>
+                    <span style={{ backgroundColor: '#000', color: '#fff', fontSize: '0.875rem', fontWeight: '600', padding: '0.25rem 0.625rem', borderRadius: '2px' }}>55%</span>
                   </div>
                 </div>
 
@@ -178,24 +187,26 @@ const LecturePlatform = () => {
                     {isProcessing ? '로그인 중...' : '카카오로 시작하기'}
                   </button>
 
-                  <button
-                    onClick={handleGoogleLogin}
-                    disabled={isProcessing}
-                    style={{ 
-                      width: '100%', 
-                      backgroundColor: '#fff', 
-                      color: '#000', 
-                      fontWeight: '500', 
-                      padding: '1rem', 
-                      border: '1px solid #e5e5e5', 
-                      cursor: 'pointer', 
-                      fontSize: '0.9375rem',
-                      opacity: isProcessing ? 0.5 : 1,
-                      transition: 'opacity 0.2s'
-                    }}
-                  >
-                    {isProcessing ? '로그인 중...' : 'Google로 시작하기'}
-                  </button>
+                  {showGoogleLogin && (
+                    <button
+                      onClick={handleGoogleLogin}
+                      disabled={isProcessing}
+                      style={{ 
+                        width: '100%', 
+                        backgroundColor: '#fff', 
+                        color: '#000', 
+                        fontWeight: '500', 
+                        padding: '1rem', 
+                        border: '1px solid #e5e5e5', 
+                        cursor: 'pointer', 
+                        fontSize: '0.9375rem',
+                        opacity: isProcessing ? 0.5 : 1,
+                        transition: 'opacity 0.2s'
+                      }}
+                    >
+                      {isProcessing ? '로그인 중...' : 'Google로 시작하기'}
+                    </button>
+                  )}
                 </div>
 
                 <p style={{ fontSize: '0.75rem', color: '#999', marginTop: '1.5rem' }}>
@@ -228,16 +239,17 @@ const LecturePlatform = () => {
                   <div style={{ marginBottom: '2rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 0', borderBottom: '1px solid #f0f0f0' }}>
                       <span style={{ color: '#333' }}>시대인재 오택민 수능영어</span>
-                      <div>
-                        <span style={{ color: '#999', textDecoration: 'line-through', marginRight: '0.75rem', fontSize: '0.875rem' }}>79,000원</span>
-                        <span style={{ fontWeight: '600', color: '#000' }}>39,000원</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span style={{ color: '#999', textDecoration: 'line-through', fontSize: '0.875rem' }}>99,000원</span>
+                        <span style={{ fontWeight: '600', color: '#000' }}>44,900원</span>
+                        <span style={{ backgroundColor: '#000', color: '#fff', fontSize: '0.75rem', fontWeight: '600', padding: '0.25rem 0.5rem', borderRadius: '2px' }}>55%</span>
                       </div>
                     </div>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', paddingTop: '1rem' }}>
                     <span style={{ fontSize: '1rem', color: '#000' }}>총 결제 금액</span>
-                    <span style={{ fontSize: '1.5rem', fontWeight: '600', color: '#000' }}>39,000원</span>
+                    <span style={{ fontSize: '1.5rem', fontWeight: '600', color: '#000' }}>44,900원</span>
                   </div>
 
                   <button
