@@ -143,7 +143,7 @@ const LecturePlatform = () => {
                 <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '1.5rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
                     <span style={{ color: '#9ca3af', textDecoration: 'line-through', fontSize: '1.125rem' }}>₩79,000</span>
-                    <span style={{ fontSize: '1.875rem', fontWeight: 'bold', color: '#000' }}>₩39,000</span>
+                    <span style={{ fontSize: '1.875rem', fontWeight: 'bold', color: '#000' }}>₩49,000</span>
                   </div>
                 </div>
               </div>
