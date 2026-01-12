@@ -120,7 +120,7 @@ const LecturePlatform = () => {
                 <img src="/otm-logo.png" alt="OTM Logo" style={{ maxWidth: '70%', maxHeight: '70%', objectFit: 'contain' }} />
               </div>
               <div style={{ padding: '2rem' }}>
-                <h2 style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '1rem', color: '#111827' }}>시대인재 오택민 수능영어</h2>
+                <h2 style={{ fontSize: 'clamp(1.25rem, 5vw, 1.875rem)', fontWeight: 'bold', marginBottom: '1rem', color: '#111827', whiteSpace: 'nowrap' }}>시대인재 오택민 수능영어</h2>
                 <p style={{ color: '#4b5563', marginBottom: '1.5rem', lineHeight: '1.625' }}>
                   안정적인 1등급을 위해 필수적인 빈칸/순서/삽입에 대한 명확한 풀이 기준을 알려드립니다.
                 </p>
