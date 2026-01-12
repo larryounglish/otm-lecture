@@ -47,3 +47,33 @@ export const checkPurchase = async (userId, lectureId) => {
 export const signOut = async () => {
   await auth.signOut();
 };
+export const signInWithKakao = () => {
+  return new Promise((resolve, reject) => {
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init('869230ee7e7d5467001436fefaa71938');
+    }
+    
+    window.Kakao.Auth.login({
+      success: function(authObj) {
+        window.Kakao.API.request({
+          url: '/v2/user/me',
+          success: function(res) {
+            const user = {
+              uid: 'kakao_' + res.id,
+              email: res.kakao_account?.email || '',
+              displayName: res.properties?.nickname || '카카오 사용자',
+              provider: 'kakao'
+            };
+            resolve(user);
+          },
+          fail: function(error) {
+            reject(error);
+          }
+        });
+      },
+      fail: function(err) {
+        reject(err);
+      }
+    });
+  });
+};

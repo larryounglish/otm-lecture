@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Play, Lock, CheckCircle, LogOut } from 'lucide-react';
-import { auth, signInWithGoogle, checkPurchase, signOut as firebaseSignOut } from './firebase';
+import { auth, signInWithGoogle, signInWithKakao, checkPurchase, signOut as firebaseSignOut } from './firebase';
 import { requestPayment } from './payment';
 import { onAuthStateChanged } from 'firebase/auth';
 
@@ -40,6 +40,21 @@ const LecturePlatform = () => {
     }
   };
 
+  const handleKakaoLogin = async () => {
+    setIsProcessing(true);
+    try {
+      const kakaoUser = await signInWithKakao();
+      setUser(kakaoUser);
+      const purchased = await checkPurchase(kakaoUser.uid, LECTURE_ID);
+      setHasPurchased(purchased);
+    } catch (error) {
+      console.error('카카오 로그인 실패:', error);
+      alert('카카오 로그인에 실패했습니다.');
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
   const handlePayment = () => {
     if (!user) {
       alert('로그인이 필요합니다.');
@@ -60,6 +75,8 @@ const LecturePlatform = () => {
 
   const handleLogout = async () => {
     await firebaseSignOut();
+    setUser(null);
+    setHasPurchased(false);
   };
 
   if (loading) {
@@ -137,7 +154,16 @@ const LecturePlatform = () => {
                 간편하게 시작하기
               </h3>
               
-              <div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <button
+                  onClick={handleKakaoLogin}
+                  disabled={isProcessing}
+                  style={{ width: '100%', backgroundColor: '#FEE500', color: '#000000', fontWeight: '600', padding: '1rem', borderRadius: '0.5rem', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', cursor: 'pointer', opacity: isProcessing ? 0.5 : 1 }}
+                >
+                  <span style={{ fontSize: '1.25rem' }}>K</span>
+                  {isProcessing ? '로그인 중...' : '카카오로 시작하기'}
+                </button>
+
                 <button
                   onClick={handleGoogleLogin}
                   disabled={isProcessing}
